@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para sa Iyo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #ff4d6d;
+            --soft-pink: #ffccd5;
+            --dark-pink: #c9184a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff0f3;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Animated Background Hearts */
+        .bg-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Container & Cards */
+        .container {
+            text-align: center;
+            z-index: 10;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.2);
+            max-width: 450px;
+            border: 2px solid var(--soft-pink);
+            transition: 0.5s;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary-pink);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        p { color: #555; line-height: 1.6; }
+
+        /* Buttons Style */
+        .btn-group {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+        }
+
+        .btn {
+            padding: 12px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-yes {
+            background-color: var(--primary-pink);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+        }
+
+        .btn-no {
+            background-color: #eee;
+            color: #777;
+            position: absolute; /* Needed for the movement effect */
+            right: -100px; /* Offset to side */
+        }
+
+        /* Transitions */
+        .hidden { display: none; }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .card { animation: float 4s ease-in-out infinite; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-hearts" id="bg-hearts"></div>
+
+    <div class="container">
+        <div id="question-card" class="card">
+            <h1>Hi!</h1>
+            <p>May gusto lang sana akong itanong sa iyo... Pwede ba?</p>
+            <div class="btn-group">
+                <button class="btn btn-yes" onclick="showConfession()">Sige, ano 'yun?</button>
+            </div>
+        </div>
+
+        <div id="confession-card" class="card hidden">
+            <h1>Ikaw lang...</h1>
+            <p id="typed-text"></p>
+            <div class="btn-group" id="final-choice" style="height: 50px;">
+                <button class="btn btn-yes" onclick="accepted()">Mahal din kita</button>
+                <button class="btn btn-no" id="no-btn" onmouseover="moveNo()">Hindi</button>
+            </div>
+        </div>
+
+        <div id="success-card" class="card hidden">
+            <h1>Yey! ❤️</h1>
+            <p>Sabi na nga ba, hindi mo ako matatanggihan. See you soon!</p>
+        </div>
+    </div>
+
+    <script>
+        // 1. Particle System for Background
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.position = 'fixed';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.opacity = Math.random();
+            heart.style.transition = '5s linear';
+            heart.style.zIndex = '-1';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.style.top = '-10vh';
+                heart.style.transform = `translateX(${Math.random() * 100 - 50}px)`;
+            }, 100);
+
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(createHeart, 300);
+
+        // 2. Logic to Show Confession
+        function showConfession() {
+            document.getElementById('question-card').classList.add('hidden');
+            document.getElementById('confession-card').classList.remove('hidden');
+            typeWriter();
+        }
+
+        // 3. Typing Effect
+        const message = "Matagal ko na itong gustong sabihin... Gusto kita. Higit pa sa kaibigan. Pwede ba kitang maging special someone?";
+        let i = 0;
+        function typeWriter() {
+            if (i < message.length) {
+                document.getElementById("typed-text").innerHTML += message.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+
+        // 4. Runaway "No" Button Logic
+        function moveNo() {
+            const btn = document.getElementById('no-btn');
+            // Randomly moves the button within the card's area
+            const x = Math.random() * 200 - 100;
+            const y = Math.random() * 200 - 100;
+            btn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function accepted() {
+            document.getElementById('confession-card').classList.add('hidden');
+            document.getElementById('success-card').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

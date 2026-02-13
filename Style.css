@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para sa Aking Paboritong Tao</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #0f0c29;
+            background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29);
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Container para sa Swipe Effect */
+        .main-container {
+            width: 100%;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+            scroll-snap-align: start;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Glassmorphism Card */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            width: 100%;
+            max-width: 450px;
+            max-height: 80vh;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+            overflow-y: auto; /* Para sa long messages */
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Scrollbar style para sa loob ng card */
+        .card::-webkit-scrollbar { width: 5px; }
+        .card::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 10px; }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #ff758c;
+            text-shadow: 0 0 10px rgba(255,117,140,0.5);
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            font-size: 1.5em;
+            color: rgba(255,255,255,0.5);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateX(-50%) translateY(0);}
+            40% {transform: translateX(-50%) translateY(-10px);}
+            60% {transform: translateX(-50%) translateY(-5px);}
+        }
+
+        /* Floating Hearts Background */
+        .heart {
+            position: absolute;
+            color: rgba(255, 117, 140, 0.3);
+            pointer-events: none;
+            z-index: 1;
+            animation: move linear infinite;
+        }
+
+        @keyframes move {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        .special-btn {
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .special-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255,117,140,0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <section>
+            <div class="card">
+                <h1>Hi, Mahal...</h1>
+                <p>
+                hmmm hi mylove i hope enjoy yourlife without hesitation if uou have any problems im here by your side mwauh
+                </p>
+                <div style="font-size: 4em;">💌</div>
+            </div>
+            <div class="scroll-hint">Swipe Down ↓</div>
+        </section>
+
+        <section>
+            <div class="card">
+                <h1>i miss u</h1>
+                <p>
+                first of all lablab ko imiss u so much, and I love you and lagi kang mag mag ingat ah kase alam mo nmn na pag nagkakasakit ka wala ako Jan sa tabi mo para maalagaan ka and wag papalipas gutom ahhh masama sa health mo yan lablab ko and pag hirap na hirap kana wag susuko ahh I'm always here to help you and to love you balang araw mag sasama narin tayo at lilibutin natin Ang buong Mundo bago tayo mag anak at Hinding Hindi kita bubuntisin Hanggang wala pa tayo sa tamang oras and I'm sorry kung lagi ako nag papasend ah🥺 and  mamahalin kita ng buo walngg halong pang loloko ikaw at Ikaw lng Ang akin mamahalin kahit minsan gusto kona tlga mag pakilala sa mother mo kaso alam ko namang takot klng din eh maski ako takot dinpero dapat ay stay positive parin tayo lablab ko ah and if u thinking ur fat nahhh ur not fat ur just a healthy and lagi ka dapat natutulog sa tamang oras lablab ko ayaw konang nag kakasakit love you always keep healthy ahh if you think your fat ohh noo ur not fat ur just a healthy girll and if u have depression again just say it to me or punta kapo sakin tutulongan po kita matangal yan 
+                And if u need help I'm here mahal always here dipo kita iiwan mark my promise and dipo kita bubuntisin mahal ko gusto ko makita kang masaya habang bata pa I know my limitations and thank you for staying me mahal kahit nahuli napo tayo ng mother mo dun palang po panalo na me sayo eh kaya lab na lab na lab kita eh and if ur busy okay I'll wait and wala po akong babae ah don't overthink about that cuz ur the only one i love and thank you po sa time mopo kanina lab lab ko ahhhh I'm so happy that time and I promise papakasalan kita and I'll treat you like a princess I promise po I loveee youu so mucchhh and I miss youu soooo muchhh
+                </p>
+            </div>
+            <div class="scroll-hint">Swipe Down ↓</div>
+        </section>
+
+        <section>
+            <div class="card">
+                <h1>Habang Buhay.</h1>
+                <p>
+                done na ikaw mag basa? yey i love you my labbb happy valentines day and ito ang pinangako kong code para sayo prinomise ko to sayo na pag natuto ako gagawan kita eh happy valentines day mahal kooooo
+                </p>
+                <button class="special-btn" onclick="rainHearts()">Tanggapin ang Pag-ibig</button>
+                <div id="status" style="margin-top: 20px; font-weight: bold; color: #ffeb3b;"></div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Function para sa Floating Background Hearts
+        function createBackgroundHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 10000);
+        }
+        setInterval(createBackgroundHeart, 300);
+
+        // Surprise Function
+        function rainHearts() {
+            document.getElementById('status').innerText = "SUCCESS: My heart is now yours forever! ❤️";
+            for(let i=0; i<30; i++) {
+                setTimeout(() => {
+                    const h = document.createElement('div');
+                    h.classList.add('heart');
+                    h.innerHTML = '💖';
+                    h.style.color = '#ffeb3b';
+                    h.style.left = Math.random() * 100 + 'vw';
+                    h.style.animationDuration = '2s';
+                    document.body.appendChild(h);
+                    setTimeout(() => h.remove(), 2000);
+                }, i * 100);
+            }
+        }
+    </script>
+</body>
+</html>
